@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Chatbot</title>
+  <style>
+    body { font-family: Arial; background: #111; color: white; }
+    #chat { height: 300px; overflow-y: scroll; border: 1px solid #444; padding: 10px; }
+    input { width: 80%; padding: 10px; }
+    button { padding: 10px; }
+  </style>
+</head>
+<body>
+
+<h2>My Chatbot 🤖</h2>
+
+<div id="chat"></div>
+
+<input id="input" placeholder="Type message..." />
+<button onclick="send()">Send</button>
+
+<script>
+function send() {
+  let input = document.getElementById("input").value;
+  let chat = document.getElementById("chat");
+
+  chat.innerHTML += "<p><b>You:</b> " + input + "</p>";
+
+  let reply = "Hello! You said: " + input;
+
+  chat.innerHTML += "<p><b>Bot:</b> " + reply + "</p>";
+
+  document.getElementById("input").value = "";
+}
+</script>
+
+</body>
+</html>
